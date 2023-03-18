@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:hirecruit/ui/screens/home.dart';
 import 'package:hirecruit/ui/screens/signin.dart';
 
+
 class SplashScreen extends StatefulWidget {
   static const String id = 'splashscreen';
 
