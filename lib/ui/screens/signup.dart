@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hirecruit/constants/color.dart';
 import 'package:hirecruit/ui/screens/home.dart';
@@ -18,11 +19,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController _pass = TextEditingController();
   TextEditingController _email = TextEditingController();
   TextEditingController _name = TextEditingController();
-  TextEditingController _mob = TextEditingController();
-  TextEditingController _cpass = TextEditingController();
-  TextEditingController _loc = TextEditingController();
-  TextEditingController _age = TextEditingController();
-  TextEditingController _gen = TextEditingController();
 
   var _error = '';
   var user = FirebaseAuth.instance.currentUser;
@@ -35,103 +31,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 SizedBox(height: 60),
                 // logo
                 Padding(
                   padding: const EdgeInsets.fromLTRB(24, 0, 48, 0),
-                  child: Image.asset('assets/spark logo rect.png'),
+                  child: Image.asset('assets/images/Hirecruit logo black.png'),
                 ),
                 SizedBox(height: 40),
 
                 inputText('Name', 'eg: Het Nakhua', _name, false),
+
                 inputText('Email', 'eg: hetnakhua@gmail.com', _email, false),
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(color: Colors.black, fontSize: 16),
-                    children: [
-                      TextSpan(
-                        text: 'Mobile',
-                      ),
-                      WidgetSpan(
-                        child: Transform.translate(
-                          offset: const Offset(0.0, -7.0),
-                          child: Text(
-                            '*',
-                            style: TextStyle(color: Colors.red, fontSize: 11),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 8),
-                // textfield
-                TextField(
-                  controller: _mob,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: black),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    hintText: 'eg: 1234567890',
-                    fillColor: Colors.grey[150],
-                    filled: true,
-                  ),
-                ),
-                SizedBox(height: 20),
-                inputText('Location', 'eg: India', _loc, false),
-                RichText(
-                  text: TextSpan(
-                    style: TextStyle(color: Colors.black, fontSize: 16),
-                    children: [
-                      TextSpan(
-                        text: 'Age',
-                      ),
-                      WidgetSpan(
-                        child: Transform.translate(
-                          offset: const Offset(0.0, -7.0),
-                          child: Text(
-                            '*',
-                            style: TextStyle(color: Colors.red, fontSize: 11),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 8),
-                // textfield
-                TextField(
-                  controller: _age,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: black),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    hintText: 'eg: 18',
-                    fillColor: Colors.grey[150],
-                    filled: true,
-                  ),
-                ),
-                SizedBox(height: 20),
-                inputText('Gender', 'eg: Male', _gen, false),
+
                 inputText('Password', 'eg: #het493', _pass, true),
-                inputText('Confirm Password', 'eg: #het493', _cpass, true),
 
                 SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
 
                 singInUp(context, false, () {
@@ -145,39 +63,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     String uid =
                         (FirebaseAuth.instance.currentUser?.uid).toString();
                     print(_error);
-                    addUser(_name.text, _email.text, uid, _loc.text,
-                        int.parse(_age.text), _gen.text, int.parse(_mob.text), [
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0,
-                      0
-                    ], []);
+                    // addUser(_name.text, _email.text, uid, _loc.text,
+                    //     int.parse(_age.text), _gen.text, int.parse(_mob.text),);
                     Navigator.push(context,
                         MaterialPageRoute(builder: (builder) => HomeScreen()));
                   }).onError((error, stackTrace) {
