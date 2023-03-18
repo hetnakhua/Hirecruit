@@ -32,7 +32,7 @@ class _StatusScreenState extends State<StatusScreen> {
       length: myTabs.length,
       child: Scaffold(
         appBar: AppBar(
-          leading: BackButton(color: Colors.black),
+          // leading: BackButton(color: Colors.black),
           title: Text(
             'Status',
             style: GoogleFonts.lato(color: black, fontWeight: FontWeight.bold),
@@ -41,34 +41,31 @@ class _StatusScreenState extends State<StatusScreen> {
           elevation: 0,
           centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: SafeArea(
-            child: Column(
-              children: [
-                // const SizedBox(height: 10),
+        body: SafeArea(
+          child: Column(
+            children: [
+              // const SizedBox(height: 10),
 
-                // tab bar
-                TabBar(
-                  indicatorWeight: 4,
-                  dividerColor: black,
-                  labelColor: darkBlue,
-                  tabs: myTabs,
-                  indicatorColor: darkBlue,
-                ),
+              // tab bar
+              TabBar(
+                indicatorWeight: 4,
+                dividerColor: black,
+                labelColor: darkBlue,
+                tabs: myTabs,
+                indicatorColor: darkBlue,
+              ),
 
-                // tab bar view
-                const Expanded(
-                  child: TabBarView(children: [
-                    // jobs applied tab page
-                    JobsAppliedTab(),
+              // tab bar view
+              const Expanded(
+                child: TabBarView(children: [
+                  // jobs applied tab page
+                  JobsAppliedTab(),
 
-                    // burger tab
-                    JobsCreatedTab(),
-                  ]),
-                )
-              ],
-            ),
+                  // burger tab
+                  JobsCreatedTab(),
+                ]),
+              )
+            ],
           ),
         ),
         bottomNavigationBar: BottomNavBar(),
