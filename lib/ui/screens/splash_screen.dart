@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hirecruit/ui/screens/home.dart';
+import 'package:hirecruit/ui/screens/onboarding_screen.dart';
 import 'package:hirecruit/ui/screens/signin.dart';
-
 
 class SplashScreen extends StatefulWidget {
   static const String id = 'splashscreen';
@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen>
         context,
         PageRouteBuilder(
           pageBuilder: (_, __, ___) =>
-              isLoggedIn ? HomeScreen() : SignInScreen(),
+              isLoggedIn ? HomeScreen() : OnboardingScreen(),
           transitionDuration: const Duration(milliseconds: 300),
           transitionsBuilder: (_, a, __, c) =>
               FadeTransition(opacity: a, child: c),
