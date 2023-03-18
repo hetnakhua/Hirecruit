@@ -36,7 +36,7 @@ Column inputText(String text, String hintText, TextEditingController controller,
         obscureText: obscT,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white),
+            borderSide: BorderSide(color: white),
             borderRadius: BorderRadius.circular(12),
           ),
           focusedBorder: OutlineInputBorder(
@@ -70,7 +70,7 @@ GestureDetector singInUp(BuildContext context, bool isLogin, Function clickMe) {
         child: Text(
           isLogin ? "Login" : "Sign Up",
           style: TextStyle(
-            color: Colors.white,
+            color: white,
             fontWeight: FontWeight.bold,
             fontSize: 16,
           ),

@@ -73,7 +73,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: white),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     focusedBorder: OutlineInputBorder(
@@ -223,7 +223,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           },
           child: Text(
             "Login!",
-            style: TextStyle(color: blue),
+            style: TextStyle(color: darkBlue),
           ),
         ),
       ],

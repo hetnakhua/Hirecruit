@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
-class HomeScreen extends StatelessWidget {
+import 'package:hirecruit/ui/widgets/navbar.dart';
+
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Text('home'),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

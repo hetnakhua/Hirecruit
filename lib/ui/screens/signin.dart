@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hirecruit/ui/screens/home.dart';
 import 'package:hirecruit/ui/screens/signup.dart';
 import 'package:hirecruit/ui/widgets/re_use.dart';
 
@@ -29,7 +30,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 // logo
                 Padding(
                   padding: const EdgeInsets.fromLTRB(24, 0, 48, 0),
-                  child: Image.asset('assets/spark logo rect.png'),
+                  child: Image.asset('assets/images/Hirecruit logo black.png'),
                 ),
                 SizedBox(height: 60),
 
@@ -83,7 +84,7 @@ class _SignInScreenState extends State<SignInScreen> {
       children: [
         Text(
           "Do not have an account? ",
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: black),
         ),
         GestureDetector(
           onTap: () {
@@ -92,7 +93,7 @@ class _SignInScreenState extends State<SignInScreen> {
           },
           child: Text(
             "Register!",
-            style: TextStyle(color: blue),
+            style: TextStyle(color: darkBlue),
           ),
         ),
       ],
