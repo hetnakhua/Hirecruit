@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hirecruit/constants/color.dart';
 import 'package:hirecruit/ui/screens/tabs/jobs_applied_tab.dart';
 import 'package:hirecruit/ui/screens/tabs/jobs_created_tab.dart';
 import 'package:hirecruit/ui/widgets/my_tab.dart';
@@ -13,7 +14,6 @@ class StatusScreen extends StatefulWidget {
 }
 
 class _StatusScreenState extends State<StatusScreen> {
-
   List<Widget> myTabs = const [
     // jobs applied
     MyTab(
@@ -25,40 +25,52 @@ class _StatusScreenState extends State<StatusScreen> {
       titleText: 'Jobs Created',
     ),
   ];
-  
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: myTabs.length,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Status', style: GoogleFonts.lato(),),
+          leading: BackButton(color: Colors.black),
+          title: Text(
+            'Status',
+            style: GoogleFonts.lato(color: black, fontWeight: FontWeight.bold),
+          ),
           backgroundColor: Colors.transparent,
           elevation: 0,
+          centerTitle: true,
         ),
-        body: SafeArea(
-          child: Column(
-            children: [
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: SafeArea(
+            child: Column(
+              children: [
+                // const SizedBox(height: 10),
 
-              const SizedBox(height: 24),
+                // tab bar
+                TabBar(
+                  indicatorWeight: 4,
+                  dividerColor: black,
+                  labelColor: darkBlue,
+                  tabs: myTabs,
+                  indicatorColor: darkBlue,
+                ),
 
-              // tab bar
-              TabBar(tabs: myTabs),
+                // tab bar view
+                const Expanded(
+                  child: TabBarView(children: [
+                    // jobs applied tab page
+                    JobsAppliedTab(),
 
-              // tab bar view
-              Expanded(
-                child: TabBarView(children: [
-                  // jobs applied tab page
-                  JobsAppliedTab(),
-
-                  // burger tab
-                  JobsCreatedTab(),
-                ]),
-              )
-            ],
+                    // burger tab
+                    JobsCreatedTab(),
+                  ]),
+                )
+              ],
+            ),
           ),
         ),
-        
         bottomNavigationBar: BottomNavBar(),
       ),
     );
