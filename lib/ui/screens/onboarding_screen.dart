@@ -1,7 +1,5 @@
-import 'package:clash_of_codes/UI/screens/register.dart';
-import 'package:clash_of_codes/UI/screens/signin.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+// import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingScreen extends StatefulWidget {
