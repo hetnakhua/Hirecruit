@@ -3,14 +3,14 @@ import 'package:hirecruit/constants/color.dart';
 import 'package:hirecruit/models/job_card.dart';
 import 'package:hirecruit/ui/widgets/job_card.dart';
 
-class JobsAppliedTab extends StatefulWidget {
-  const JobsAppliedTab({super.key});
+class JobsApplyTab extends StatefulWidget {
+  const JobsApplyTab({super.key});
 
   @override
-  State<JobsAppliedTab> createState() => _JobsAppliedTabState();
+  State<JobsApplyTab> createState() => _JobsApplyTabState();
 }
 
-class _JobsAppliedTabState extends State<JobsAppliedTab> {
+class _JobsApplyTabState extends State<JobsApplyTab> {
   List<JobDetails> job = [
     JobDetails(
       company: 'Google',
