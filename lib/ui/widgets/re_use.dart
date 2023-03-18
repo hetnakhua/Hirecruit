@@ -80,6 +80,23 @@ GestureDetector singInUp(BuildContext context, bool isLogin, Function clickMe) {
   );
 }
 
+Container skills(String title) {
+  return Container(
+      margin: EdgeInsets.symmetric(horizontal: 10),
+      padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: lightBlue,
+      ),
+      child: Text('${title}', style: GoogleFonts.lato(fontSize: 16)));
+}
+
+
+
+
+
+
+
 // Stack spark_card(
 //     BuildContext context, String imgUrl, String name, String about) {
 //   return Stack(

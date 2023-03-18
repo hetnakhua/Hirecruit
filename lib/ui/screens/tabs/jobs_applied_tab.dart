@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hirecruit/constants/color.dart';
-import 'package:hirecruit/models/job_card.dart';
+import 'package:hirecruit/models/job_model.dart';
 import 'package:hirecruit/ui/widgets/job_card.dart';
 
 class JobsAppliedTab extends StatefulWidget {
