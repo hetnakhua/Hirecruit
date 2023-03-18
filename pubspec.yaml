@@ -41,7 +41,10 @@ dependencies:
 
   # navbar
   custom_line_indicator_bottom_navbar: ^0.0.8
+
+  # onboarding
   smooth_page_indicator: ^1.0.1
+
 
 dev_dependencies:
   flutter_test:
