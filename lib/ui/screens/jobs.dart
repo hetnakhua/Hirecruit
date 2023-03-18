@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hirecruit/constants/color.dart';
+import 'package:hirecruit/ui/screens/tabs/job_apply_tab.dart';
+import 'package:hirecruit/ui/screens/tabs/job_create_tab.dart';
 import 'package:hirecruit/ui/screens/tabs/jobs_applied_tab.dart';
 import 'package:hirecruit/ui/screens/tabs/jobs_created_tab.dart';
 import 'package:hirecruit/ui/widgets/my_tab.dart';
@@ -61,10 +63,10 @@ class _JobScreenState extends State<JobScreen> {
                 const Expanded(
                   child: TabBarView(children: [
                     // jobs applied tab page
-                    JobsAppliedTab(),
+                    JobsApplyTab(),
 
                     // burger tab
-                    JobsCreatedTab(),
+                    JobsCreateTab(),
                   ]),
                 )
               ],

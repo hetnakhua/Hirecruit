@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 20),
-        
+
                 // search bar + filter
                 Row(
                   children: [
@@ -137,7 +137,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Row(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10.0),
                               child: Icon(Icons.search_rounded),
                             ),
                             Expanded(
@@ -161,14 +162,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
-                        child: Image.asset('assets/images/filter-icon-white.png'),
+                        child:
+                            Image.asset('assets/images/filter-icon-white.png'),
                       ),
                     ),
                   ],
                 ),
-              
+
                 SizedBox(height: 30),
-              
+
                 // tips heading
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -191,9 +193,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-              
+
                 SizedBox(height: 20),
-              
+
                 // tips card
                 Container(
                   width: MediaQuery.of(context).size.width,
@@ -243,9 +245,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-              
+
                 SizedBox(height: 30),
-              
+
                 // Recommended Jobs heading
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -268,9 +270,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-              
+
                 SizedBox(height: 20),
-              
+
                 // recommended job card
                 ListView.builder(
                   shrinkWrap: true,
@@ -287,7 +289,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           company: recommended_jobs[index].company,
                           title: recommended_jobs[index].title,
                           imageUrl: recommended_jobs[index].imageUrl,
-                          jobDescription: recommended_jobs[index].jobDescription,
+                          jobDescription:
+                              recommended_jobs[index].jobDescription,
                           skills: recommended_jobs[index].skills,
                           salary: recommended_jobs[index].salary),
                     );

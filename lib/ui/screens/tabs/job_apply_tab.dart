@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hirecruit/constants/color.dart';
 import 'package:hirecruit/models/job_card.dart';
 import 'package:hirecruit/ui/widgets/job_card.dart';
+import 'package:hirecruit/ui/widgets/status_card.dart';
 
 class JobsApplyTab extends StatefulWidget {
   const JobsApplyTab({super.key});
@@ -11,8 +12,8 @@ class JobsApplyTab extends StatefulWidget {
 }
 
 class _JobsApplyTabState extends State<JobsApplyTab> {
-  List<JobDetails> job = [
-    JobDetails(
+  List<StatusCard> job = [
+    StatusCard(
       company: 'Google',
       title: 'Web Developer',
       imageUrl:
@@ -20,7 +21,7 @@ class _JobsApplyTabState extends State<JobsApplyTab> {
       jobDescription: 'Web developer with html,css',
       skills: ['html', 'css', 'javascript'],
       salary: 8000.0,
-      rating: 4.4,
+      status:['Accepted', 'Under Review','Rejected']
     )
   ];
 
@@ -37,13 +38,17 @@ class _JobsApplyTabState extends State<JobsApplyTab> {
                   spreadRadius: 2,
                   offset: Offset(8, 4))
             ]),
-            child: JobCard(
+            child: StatusCard(
+
                 company: job[index].company,
                 title: job[index].title,
                 imageUrl: job[index].imageUrl,
                 jobDescription: job[index].jobDescription,
                 skills: job[index].skills,
                 salary: job[index].salary),
+                
+                
+
           );
         },
         itemCount: job.length,
