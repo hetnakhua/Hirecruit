@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hirecruit/constants/color.dart';
-import 'package:hirecruit/models/job_card.dart';
+import 'package:hirecruit/models/job_model.dart';
 import 'package:hirecruit/ui/screens/signin.dart';
 import 'package:hirecruit/ui/widgets/job_card.dart';
 import 'package:hirecruit/ui/widgets/navbar.dart';
