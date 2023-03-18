@@ -1,8 +1,9 @@
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hirecruit/ui/screens/home.dart';
-
+import 'package:hirecruit/ui/screens/signin.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String id = 'splashscreen';
@@ -40,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen>
         context,
         PageRouteBuilder(
           pageBuilder: (_, __, ___) =>
-              isLoggedIn ? HomeScreen() : OnboardingScreen(),
+              isLoggedIn ? HomeScreen() : SignInScreen(),
           transitionDuration: const Duration(milliseconds: 300),
           transitionsBuilder: (_, a, __, c) =>
               FadeTransition(opacity: a, child: c),
@@ -73,7 +74,7 @@ class _SplashScreenState extends State<SplashScreen>
           scale: _animation,
           child: Image(
             image: const AssetImage(
-              'assets/Hirecruit logo black.png',
+              'assets/images/Hirecruit logo black.png',
             ),
             // height: 480,
             width: MediaQuery.of(context).size.width,
