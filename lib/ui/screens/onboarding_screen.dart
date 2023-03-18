@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-// import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:hirecruit/constants/color.dart';
+import 'package:hirecruit/ui/screens/signin.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingScreen extends StatefulWidget {
@@ -33,82 +35,108 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             controller: _pageController,
             children: [
               Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/onboarding1.png',
-                      height: 350,
-                      width: 350,
-                    ),
-                    Text(
-                      "Dating made easy",
-                      style: GoogleFonts.lato(
-                        textStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28,
+                child: Padding(
+                  padding: const EdgeInsets.all(40.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        child: Image.asset(
+                          'assets/images/onboardingimg1.png',
+                          width: 270,
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text("Filtered people based on your interests",
-                        style: GoogleFonts.lato()),
-                  ],
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Text(
+                        "Finding Your\nDream Job",
+                        style: GoogleFonts.lato(
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 36,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text("Search and Find your dream job easily and quickly",
+                          style: GoogleFonts.lato(
+                            color: Colors.grey[400],
+                            fontSize: 18,
+                          )),
+                    ],
+                  ),
                 ),
               ),
               Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/onboarding2.png',
-                      height: 350,
-                      width: 350,
-                    ),
-                    Text(
-                      "Dating made quick",
-                      style: GoogleFonts.lato(
-                        textStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28,
+                child: Padding(
+                  padding: const EdgeInsets.all(40.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset(
+                        'assets/images/onboardingimg2.png',
+                        width: 270,
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Text(
+                        "Get Your\nDream Job",
+                        style: GoogleFonts.lato(
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 36,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                        "You have 24 hours to chat, its a blind date after all!",
-                        style: GoogleFonts.lato()),
-                  ],
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                          "Get your dream job and start working in a new company",
+                          style: GoogleFonts.lato(
+                              color: Colors.grey[400],
+                              fontSize: 16,
+                              height: 1.5)),
+                    ],
+                  ),
                 ),
               ),
               Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      'assets/onboarding3.png',
-                      height: 350,
-                      width: 350,
-                    ),
-                    Text(
-                      "Dating made safe",
-                      style: GoogleFonts.lato(
-                        textStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 28,
+                child: Padding(
+                  padding: const EdgeInsets.all(40.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset(
+                        'assets/images/onboardingimg3.png',
+                        width: 270,
+                      ),
+                      Text(
+                        "Join and Smart\nYour Work",
+                        style: GoogleFonts.lato(
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            fontSize: 36,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text("Leave your worries aside and find love <3",
-                        style: GoogleFonts.lato()),
-                  ],
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text("Welcome to the journey of finding your dream job",
+                          style: GoogleFonts.lato(
+                              color: Colors.grey[400],
+                              fontSize: 16,
+                              height: 1.5)),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -170,10 +198,29 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       });
                     },
                     child: currentPage != 2
-                        ? const Text('    Next',
+                        ? const Text('Next',
                             style: TextStyle(color: Colors.black))
-                        : Image.asset("assets/get sparked.png",
-                            height: MediaQuery.of(context).size.width * 0.06)),
+                        : Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 10),
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 30.0, // soften the shadow
+                                  spreadRadius: 1.0, //extend the shadow
+                                  offset: Offset(
+                                    10.0, // Move to right 5  horizontally
+                                    10.0, // Move to bottom 5 Vertically
+                                  ),
+                                )
+                              ],
+                              color: darkBlue,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: const Text('Start',
+                                style: TextStyle(color: Colors.white)),
+                          )),
                 //SizedBox(height: 24)
               ],
             ),
