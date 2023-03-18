@@ -13,40 +13,44 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  TextEditingController _searchText = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Colors.grey,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: RichText(
           text: TextSpan(
-              text: 'Hey ',
-              style: GoogleFonts.lato(
-                fontSize: 28,
-                fontWeight: FontWeight.w500,
-                color: Colors.black,
+            text: 'Hey ',
+            style: GoogleFonts.lato(
+              fontSize: 28,
+              fontWeight: FontWeight.w500,
+              color: Colors.black,
+            ),
+            children: [
+              TextSpan(
+                text: 'Het!',
+                style: GoogleFonts.lato(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w900,
+                  color: Colors.black,
+                ),
               ),
-              children: [
-                TextSpan(
-                    text: 'Het!',
-                    style: GoogleFonts.lato(
-                      fontSize: 28,
-                      fontWeight: FontWeight.w900,
-                      color: Colors.black,
-                    )),
-              ]),
+            ],
+          ),
         ),
         leading: Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 0, 0),
           child: Container(
             decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/profile avatar.png'),
-                fit: BoxFit.cover,
-              ),
-              shape: BoxShape.circle
-            ),
+                image: DecorationImage(
+                  image: AssetImage('assets/images/profile avatar.png'),
+                  fit: BoxFit.cover,
+                ),
+                shape: BoxShape.circle),
           ),
         ),
         actions: [
@@ -66,15 +70,143 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          // search bar + filter
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 20),
+            // search bar + filter
+            Row(
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: white,
+                      // border: Border.all(color: Colors.black),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 200,
+                          spreadRadius: 2,
+                          offset: Offset(8, 4),
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Icon(Icons.search_rounded),
+                        ),
+                        Expanded(
+                          child: TextField(
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'Search job, title, company,..'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(width: 10),
+                Container(
+                  height: 50,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: darkBlue,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Image.asset('assets/images/filter-icon-white.png'),
+                  ),
+                ),
+              ],
+            ),
 
-          // tips card
+            SizedBox(height: 30),
 
-          // recommended job card
+            // tips heading
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Tips for you',
+                  style: GoogleFonts.lato(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  'View All',
+                  style: GoogleFonts.lato(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: lightBlue,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ],
+            ),
 
-        ],
+            SizedBox(height: 20),
+
+            // tips card
+            Container(
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: darkBlue,
+                  width: 4,
+                ),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width / 2 - 48,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'How to find a perfect job for you?',
+                            style: GoogleFonts.lato(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(height: 10),
+                          TextButton(
+                            style: TextButton.styleFrom(
+                              foregroundColor: white,
+                              backgroundColor: lightBlue,
+                              padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
+                              textStyle: const TextStyle(fontSize: 12),
+                            ),
+                            onPressed: () {},
+                            child: const Text('Read More'),
+                          ),
+                        ],
+                      ),
+                    ),
+                    // SizedBox(width: 16),
+                    Image.asset(
+                      'assets/images/tips.png',
+                      scale: 1.2,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            // recommended job card
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavBar(),
     );
