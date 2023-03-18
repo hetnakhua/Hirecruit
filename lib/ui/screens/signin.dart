@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hirecruit/ui/screens/home.dart';
 import 'package:hirecruit/ui/screens/signup.dart';
@@ -32,14 +33,14 @@ class _SignInScreenState extends State<SignInScreen> {
                   padding: const EdgeInsets.fromLTRB(24, 0, 48, 0),
                   child: Image.asset('assets/images/Hirecruit logo black.png'),
                 ),
-                SizedBox(height: 60),
+                SizedBox(height: 40),
 
                 // inputText('Name', 'eg: Het Nakhua', controller, obscT),
                 inputText('Email', 'eg: hetnakhua@gmail.com', _email, false),
                 inputText('Password', 'eg: #het493', _pass, true),
 
                 SizedBox(
-                  height: 40,
+                  height: 20,
                 ),
                 singInUp(context, true, () {
                   FirebaseAuth.instance
@@ -54,6 +55,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     setState(() => _error = error
                         .toString()
                         .substring(error.toString().indexOf(']') + 2));
+
                     print(_error);
                   });
                 }),
