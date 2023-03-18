@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "209944295694",
+    "project_id": "err50-75cc3",
+    "storage_bucket": "err50-75cc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209944295694:android:8fa832d0af32df4e93ff5f",
+        "android_client_info": {
+          "package_name": "com.example.hirecruit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "209944295694-pbfo2vjb0o63siqddo7b187ro53fb69t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmiAPXUzlgkJ-wKJeP-k2LRu0vxJpnwOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "209944295694-bojua05fp4dsomq3lor96eguj0d2d72n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "209944295694-vismiul226919cl38cnum4s6g7bokqn3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hirecruit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
