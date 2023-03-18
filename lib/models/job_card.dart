@@ -6,12 +6,16 @@ class JobDetails {
   final List skills;
   final double salary;
   final double rating;
-  JobDetails(
-      {required this.company,
-      required this.title,
-      required this.imageUrl,
-      required this.jobDescription,
-      required this.skills,
-      required this.salary,
-      required this.rating});
+  final List<int> status;
+
+  JobDetails({
+    required this.company,
+    required this.title,
+    required this.imageUrl,
+    required this.jobDescription,
+    required this.skills,
+    required this.salary,
+    required this.rating,
+    required this.status,
+  });
 }

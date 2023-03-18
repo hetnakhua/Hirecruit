@@ -27,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
       skills: ['html', 'css', 'javascript'],
       salary: 8000.0,
       rating: 4.4,
+      status: [1, 0, 0],
     ),
     JobDetails(
       company: 'Google',
@@ -37,6 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
       skills: ['html', 'css', 'javascript'],
       salary: 8000.0,
       rating: 4.4,
+      status: [1, 0, 0],
     ),
     JobDetails(
       company: 'Google',
@@ -47,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
       skills: ['html', 'css', 'javascript'],
       salary: 8000.0,
       rating: 4.4,
+      status: [1, 0, 0],
     ),
   ];
 
@@ -278,22 +281,23 @@ class _HomeScreenState extends State<HomeScreen> {
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     return Container(
-                      decoration: BoxDecoration(boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey.withOpacity(0.2),
-                            blurRadius: 200,
-                            spreadRadius: 2,
-                            offset: Offset(8, 4))
-                      ]),
-                      child: JobCard(
+                        decoration: BoxDecoration(boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey.withOpacity(0.2),
+                              blurRadius: 200,
+                              spreadRadius: 2,
+                              offset: Offset(8, 4))
+                        ]),
+                        child: JobCard(
                           company: recommended_jobs[index].company,
                           title: recommended_jobs[index].title,
                           imageUrl: recommended_jobs[index].imageUrl,
                           jobDescription:
                               recommended_jobs[index].jobDescription,
                           skills: recommended_jobs[index].skills,
-                          salary: recommended_jobs[index].salary),
-                    );
+                          salary: recommended_jobs[index].salary,
+                          status: recommended_jobs[index].status,
+                        ));
                   },
                   itemCount: recommended_jobs.length,
                 ),
