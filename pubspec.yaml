@@ -47,6 +47,9 @@ dependencies:
   cloud_firestore: ^4.4.5
 
   dotted_border: ^2.0.0+3
+  uuid: ^3.0.7
+  file_picker: ^5.2.6
+  firebase_storage: ^11.0.16
 
 
 dev_dependencies:

@@ -73,7 +73,7 @@ class _JobScreenState extends State<JobScreen> {
             ),
           ),
         ),
-        bottomNavigationBar: BottomNavBar(),
+        bottomNavigationBar: const BottomNavBar(),
       ),
     );
   }
