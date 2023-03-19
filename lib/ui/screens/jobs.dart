@@ -34,7 +34,7 @@ class _JobScreenState extends State<JobScreen> {
       length: myTabs.length,
       child: Scaffold(
         appBar: AppBar(
-          leading: BackButton(color: Colors.black),
+          // leading: BackButton(color: Colors.black),
           title: Text(
             'Jobs',
             style: GoogleFonts.lato(color: black, fontWeight: FontWeight.bold),
@@ -43,34 +43,31 @@ class _JobScreenState extends State<JobScreen> {
           elevation: 0,
           centerTitle: true,
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: SafeArea(
-            child: Column(
-              children: [
-                // const SizedBox(height: 10),
+        body: SafeArea(
+          child: Column(
+            children: [
+              // const SizedBox(height: 10),
 
-                // tab bar
-                TabBar(
-                  indicatorWeight: 4,
-                  dividerColor: black,
-                  labelColor: darkBlue,
-                  tabs: myTabs,
-                  indicatorColor: darkBlue,
-                ),
+              // tab bar
+              TabBar(
+                indicatorWeight: 4,
+                dividerColor: black,
+                labelColor: darkBlue,
+                tabs: myTabs,
+                indicatorColor: darkBlue,
+              ),
 
-                // tab bar view
-                const Expanded(
-                  child: TabBarView(children: [
-                    // jobs applied tab page
-                    JobsApplyTab(),
+              // tab bar view
+              const Expanded(
+                child: TabBarView(children: [
+                  // jobs applied tab page
+                  JobsApplyTab(),
 
-                    // burger tab
-                    JobsCreateTab(),
-                  ]),
-                )
-              ],
-            ),
+                  // burger tab
+                  JobsCreateTab(),
+                ]),
+              )
+            ],
           ),
         ),
         bottomNavigationBar: const BottomNavBar(),

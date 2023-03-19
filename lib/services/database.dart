@@ -7,6 +7,8 @@ class UserDatabaseService {
   final String userUid;
   UserDatabaseService({required this.userUid});
 
+  
+
   // collection referenct
   final CollectionReference userCollectionReference =
       FirebaseFirestore.instance.collection('user');

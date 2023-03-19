@@ -59,7 +59,6 @@ class _HomeScreenState extends State<HomeScreen> {
   // Map<String,dynamic> toJson()=>{
   //   ,
 
-
   // }
 
   @override
@@ -165,17 +164,20 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     SizedBox(width: 10),
-                    Container(
-                      height: 50,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        color: darkBlue,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child:
-                            Image.asset('assets/images/filter-icon-white.png'),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        height: 50,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          color: darkBlue,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Image.asset(
+                              'assets/images/filter-icon-white.png'),
+                        ),
                       ),
                     ),
                   ],
