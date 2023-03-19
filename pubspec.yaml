@@ -38,6 +38,7 @@ dependencies:
   firebase_core: ^2.8.0
   google_fonts:
   firebase_auth: ^4.3.0
+  cloud_firestore: ^4.4.5
 
   # navbar
   custom_line_indicator_bottom_navbar: ^0.0.8
