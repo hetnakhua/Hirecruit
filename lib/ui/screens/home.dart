@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -52,6 +53,14 @@ class _HomeScreenState extends State<HomeScreen> {
       status: [1, 0, 0],
     ),
   ];
+
+  // Stream<List<User>> readUsers() => FirebaseFirestore.instance.collection('job').snapshots(),map((snapshot)=>snapshot.docs.map((doc)=>User.fromJson(doc.data()).toList());
+
+  // Map<String,dynamic> toJson()=>{
+  //   ,
+
+
+  // }
 
   @override
   Widget build(BuildContext context) {

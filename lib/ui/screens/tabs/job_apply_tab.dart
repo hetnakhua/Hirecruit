@@ -22,6 +22,16 @@ class _JobsApplyTabState extends State<JobsApplyTab> {
       salary: 8000.0,
       status: [1, 0, 0],
     ),
+    JobCard(
+      company: 'Uber',
+      title: 'Mobile Developer',
+      imageUrl:
+          'https://seeklogo.com/images/U/uber-logo-2BB8EC4342-seeklogo.com.png',
+      jobDescription: 'Web developer with html,css',
+      skills: ['html', 'css', 'javascript'],
+      salary: 8000.0,
+      status: [1, 0, 0],
+    ),
   ];
 
   @override

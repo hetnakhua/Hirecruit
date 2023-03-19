@@ -1,10 +1,16 @@
+import 'dart:io';
+
 import 'package:dotted_border/dotted_border.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hirecruit/constants/color.dart';
 import 'package:hirecruit/models/profile_model.dart';
 import 'package:hirecruit/ui/widgets/navbar.dart';
-import 'package:hirecruit/ui/widgets/re_use.dart';
+import 'package:uuid/uuid.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -16,6 +22,8 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   final String name = 'Het Nakhua';
   final String email = 'hetsnakhua@gmail.com';
+  PlatformFile? pickedFile;
+  final user = FirebaseAuth.instance.currentUser;
 
   List<String> allSkills = [
     'Flutter',
@@ -52,6 +60,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
         desc:
             'Conducted user research to identify pain points and opportunities for improvement in the company\'s mobile app. Created user personas and developed wireframes and interactive prototypes to test design concepts.'),
   ];
+
+  Future selectFile() async {
+    final result = await FilePicker.platform.pickFiles();
+    if (result == null) return null;
+    setState(() {
+      pickedFile = result.files.first;
+    });
+  }
+
+  Future uploadFile() async {
+    var uuid = Uuid().v1();
+    final path = '${uuid}';
+    final file = File(pickedFile!.path!);
+    final ref = FirebaseStorage.instance.ref().child(path);
+    ref.putFile(file);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -125,7 +149,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     // upload pdf
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        selectFile();
+                      },
                       child: DottedBorder(
                         borderType: BorderType.RRect,
                         dashPattern: [3, 3],

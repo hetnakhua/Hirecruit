@@ -32,10 +32,10 @@ class _JobCardState extends State<JobCard> {
         boxShadow: [
           BoxShadow(
             color: Colors.grey.shade200.withOpacity(.1),
-            blurRadius: 20.0, 
-            spreadRadius: 0.0, 
+            blurRadius: 20.0,
+            spreadRadius: 0.0,
             offset: Offset(
-              8.0, 
+              8.0,
               4.0,
             ),
           )
@@ -127,8 +127,8 @@ class _JobCardState extends State<JobCard> {
                       ),
                       Text(
                         '\u{20B9} ${widget.salary}',
-                        style:
-                            TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 16),
                       ),
                     ],
                   ),
