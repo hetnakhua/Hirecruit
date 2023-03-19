@@ -23,6 +23,7 @@ class _JobsApplyTabState extends State<JobsApplyTab> {
       status: [1, 0, 0],
     ),
   ];
+  
 
   @override
   Widget build(BuildContext context) {
