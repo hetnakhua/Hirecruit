@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hirecruit/constants/color.dart';
 import 'package:hirecruit/ui/widgets/job_card.dart';
+import 'package:dotted_border/dotted_border.dart';
 
 class JobsCreateTab extends StatefulWidget {
   const JobsCreateTab({super.key});
@@ -33,17 +34,27 @@ class _JobsCreateTabState extends State<JobsCreateTab> {
             SizedBox(height: 30),
             GestureDetector(
               onTap: () {},
-              child: Container(
-                height: 100,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: darkBlue,
-                    width: 3,
+              child: DottedBorder(
+                borderType: BorderType.RRect,
+                dashPattern: [3, 3],
+                color: darkBlue,
+                strokeWidth: 3,
+                radius: Radius.circular(16),
+                child: Container(
+                  height: 100,
+                  // decoration: BoxDecoration(
+                  //   border: Border.all(
+                  //     color: darkBlue,
+                  //     width: 3,
+                  //   ),
+                  //   borderRadius: BorderRadius.circular(16),
+                  // ),
+                  child: Center(
+                    child: Icon(
+                      Icons.add_circle_outline_outlined,
+                      size: 36,
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: Center(
-                  child: Icon(Icons.add_circle_outline_outlined, size: 36,),
                 ),
               ),
             ),

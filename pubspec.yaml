@@ -46,6 +46,8 @@ dependencies:
   smooth_page_indicator: ^1.0.1
   cloud_firestore: ^4.4.5
 
+  dotted_border: ^2.0.0+3
+
 
 dev_dependencies:
   flutter_test:
